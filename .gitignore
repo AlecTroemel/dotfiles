@@ -1,0 +1,40 @@
+# ignore everything
+*.*
+Documents/
+Downloads/
+Music/
+Pictures/
+snap/
+temp
+
+!.gitignore
+
+# emacs stuff
+!.emacs
+!.emacs.d/
+.emacs.d/**/*
+!.emacs.d/snippets/
+!.emacs.d/snippets/*
+
+!.zshrc
+!.Xdefaults
+
+
+!.config/
+.config/**/*
+!.config/sway/
+!.config/sway/*
+!.config/swaylock/
+!.config/swaylock/**/*
+!.config/waybar/
+!.config/waybar/**/*
+!.config/rofi/
+!.config/rofi/**/*
+!.config/base16-gnome-terminal/
+!.config/base16-gnome-terminal/**/*
+
+# ignore emacs files
+.#*w
+*~
+*#
+.#*
