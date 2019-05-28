@@ -1,0 +1,38 @@
+color=000000
+font="Fire Code Light"
+indicator-thickness=20
+indicator-radius=100
+# line-uses-ring=true
+
+# typing
+inside-color=000000
+line-color=a3be8c
+ring-color=a3be8c
+text-color=a3be8c
+key-hl-color=000000
+bs-hl-color=000000
+separator-color=000000
+
+# checking
+inside-ver-color=000000
+line-ver-color=96b5b4
+ring-ver-color=96b5b4
+text-ver-color=96b5b4
+
+# wrong
+inside-wrong-color=000000
+line-wrong-color=bf616a
+ring-wrong-color=bf616a
+text-wrong-color=bf616a
+
+# clear
+inside-clear-color=000000
+line-clear-color=ebcb8b
+ring-clear-color=ebcb8b
+text-clear-color=ebcb8b
+
+# caps
+inside-caps-lock-color=000000
+line-caps-lock-color=b48ead
+ring-caps-lock-color=b48ead
+text-caps-lock-color=b48ead
