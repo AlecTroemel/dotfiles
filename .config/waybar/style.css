@@ -1,0 +1,65 @@
+*  {
+    border:none;
+    border-radius: 0;
+    font-family: "FuraCode Nerd Font";
+    font-size: 18px;
+    box-shadow: none;
+    text-shadow: none;
+    transition-duration: 0s;
+}
+
+window {
+    color: #eff1f5;
+    background: rgba(35, 31, 32, 0.00);
+}
+
+window#waybar.solo {
+    color: #eff1f5;
+    background: rgba(35, 31, 32, 0.00);
+}
+
+#workspaces {
+    margin: 0 5px;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    color: #eff1f5;
+}
+
+#workspaces button.visible {
+    color: #eff1f5;
+}
+
+#workspaces button.focused {
+    background-color: #dfe1e8;
+    color: #2b303b;
+}
+
+#workspaces button.urgent {
+    color: #bf616a;
+}
+
+#mode, #battery, #cpu, #memory, #network, #pulseaudio, #idle_inhibitor, #backlight, #custom-storage, #custom-spotify, #custom-weather, #custom-mail, #custom-background {
+    border-top: 1px solid #dfe1e8;
+    margin: 0px 6px 0px 2px;
+    min-width: 25px;
+}
+
+#clock {
+    border-top: 1px solid #dfe1e8;
+    margin: 0px 16px 0px 2px;
+    min-width: 140px;
+}
+
+#battery.warning {
+    color: #ebcb8b;
+}
+
+#battery.critical {
+    color: #bf616a;
+}
+
+#battery.charging {
+    color: #eff1f5;
+}

@@ -1,0 +1,93 @@
+{
+    "position": "bottom",
+    "height": 35,
+    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
+    "modules-center": [],
+    "modules-right": [ "custom/spotify", "pulseaudio", "custom/weather", "backlight", "network", "battery", "custom/background", "clock"],
+    "sway/mode": {
+        "format": "{}"
+    },
+    "sway/workspaces": {
+        "format": "{name}",
+        "disable-scroll": true
+    },
+    "sway/window": {
+        "max-length": 80,
+        "tooltip": false
+    },
+    "clock": {
+        "format": "{:%a %d %b %I:%M%P}",
+        "tooltip": false
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": {
+            "charging": ["", "", "", "", "", "", ""],
+            "default": ["", "", "", "", "", "", "", "", "", ""]
+        },
+        "interval": 1,
+        "states": {
+            "warning": 25,
+            "critical": 10
+        },
+        "tooltip": false
+    },
+    "network": {
+        "format": "{ipaddr} {icon}",
+        "format-alt": "{ipaddr}/{cidr} {icon}",
+        "format-alt-click": "click-right",
+        "format-icons": {
+            "wifi": ["", "" ,""],
+            "ethernet": [""],
+            "disconnected": ["."]
+        },
+        "on-click": "termite -e nmtui",
+        "tooltip": false
+    },
+    "pulseaudio": {
+        "format": "{volume} {icon}",
+        "format-alt": "{icon}",
+        "format-alt-click": "click-right",
+        "format-muted": "0 ",
+        "format-icons": {
+            "headset": [ " ", " "],
+            "phone": [ " ", " "],
+            "default": ["", ""]
+        },
+        "scroll-step": 1,
+        "on-click": "pavucontrol",
+        "tooltip": false
+    },
+    "backlight": {
+        "format": "{percent} {icon}",
+        "format-alt": "{icon}",
+        "format-alt-click": "click-right",
+        "format-icons": ["", ""],
+        "on-scroll-down": "light -A 2",
+        "on-scroll-up": "light -U 2"
+    },
+    "custom/spotify": {
+        "interval": 1,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/spotify.sh",
+        "exec-if": "pgrep spotify",
+        "escape": true
+    },
+    "custom/weather": {
+        "format": "{}",
+        "format-alt": "{alt}: {}",
+        "format-alt-click": "click-right",
+        "interval": 200,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/weather.sh",
+        "exec-if": "ping wttr.in -c1",
+        "tooltip": false
+    },
+    "custom/background": {
+        "format": "",
+        "format-alt": "background: {} ",
+        "interval": 3600,
+        "exec": "~/.config/waybar/modules/background.sh",
+        "tooltip": false
+    }
+}
