@@ -20,14 +20,6 @@ zstyle ':vcs_info:git:*' formats '%b'
 
 PS1='%F{blue}(%~%f%F{blue}) %F{yellow}( ${vcs_info_msg_0_}) %F{green}(ﴱ $ZSH_KUBECTL_PROMPT)'$'\n''%(?.%F{magenta}.%F{red})> %f'
 
-#### Google Cloud SDK ####
-if [ -f /Users/alectroemel/Downloads/google-cloud-sdk/path.zsh.inc ]; then
-  source '/Users/alectroemel/Downloads/google-cloud-sdk/path.zsh.inc'
-fi
-if [ -f /Users/alectroemel/Downloads/google-cloud-sdk/completion.zsh.inc ]; then
-  source '/Users/alectroemel/Downloads/google-cloud-sdk/completion.zsh.inc'
-fi
-
 #### NVM and AVN stuff ####
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
