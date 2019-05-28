@@ -1,0 +1,4 @@
+configuration {
+    theme: "/home/alec/.config/rofi/themes/base16-ocean.rasi";
+    show-icons: true;
+}
