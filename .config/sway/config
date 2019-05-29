@@ -2,12 +2,11 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Fira Code Retina 16
+font pango:FuraCode Nerd Font 16
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
- #  bindsym $mod+d exec GDK_BACKEND=x11 ulauncher  2
 bindsym $mod+space exec GDK_BACKEND=x11 rofi -show combi -run-shell-command '{terminal} -e \\"{cmd}; read -n 1 -s"'
 
 # start a terminal
@@ -138,9 +137,6 @@ for_window [class="^.*"] border pixel 0
 default_floating_border pixel 4
 default_border none
 
-# gaps top 25
-# gaps bottom 15
-# gaps horizontal 25
 gaps outer 0
 gaps inner 15
 
@@ -148,19 +144,11 @@ output eDP-1 scale 1
 output HDMI-A-2 scale 1
 output HDMI-A-2 pos 0 0 res 3440x1440
 output eDP-1 pos 900 1440 res 2560x1440
-
-# gradient_dark_red
-# gradient_space
-# gradient_dark_blue
-# output eDP-1 bg ~/Pictures/wallpapers/gradient_purple.jpg stretch
+# output eDP-1 bg ~/Pictures/wallpapers/gradient_dark_red.jpg stretch
 # output HDMI-A-2 bg ~/Pictures/wallpapers/gradient_purple.jpg stretch
 
 input 1:1:AT_Translated_Set_2_keyboard {
       xkb_options ctrl:swapcaps
-
-      # XF86MonBrightnessUp XF86MonBrightnessDown
-      # sudo brightnessctl s 10-
-      # sudo brightnessctl s +10
 }
 
 input 1267:32:Elan_Touchpad {
@@ -172,10 +160,6 @@ input 1267:32:Elan_Touchpad {
 # special keyboard inputs
 bindsym XF86MonBrightnessUp exec light -A 3
 bindsym XF86MonBrightnessDown exec light -U 3
-
-# bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5+
-# bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5-
-# bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master 1+ toggle
 
 # change volume or toggle mute
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 waybar
@@ -199,5 +183,4 @@ client.focused_inactive #65737E #65737E #DFE1E8 #65737E   #65737E
 client.unfocused        #4F5B66 #4F5B66 #DFE1E8 #4F5B66   #4F5B66
 client.urgent           #BF616A #BF616A #DFE1E8 #BF616A   #BF616A
 client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
-
 client.background       #2b303b
