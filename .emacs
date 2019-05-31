@@ -44,7 +44,6 @@
 ;; remove trailing white space on save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-;; custom key bindings
 ;; TODO: be able to duplicate mutliple lines
 (defun duplicate-line()
   (interactive)
@@ -53,9 +52,13 @@
   (yank)
   (open-line 1)
   (next-line 1)
-  (yank)
-  )
+  (yank))
+
+;; custom scripts
 (add-to-list 'load-path "~/.emacs.d/custom/sort-lines-by-length.el")
+(add-to-list 'load-path "~/.emacs.d/snippets/lunch.el")
+
+;; custom key bindings
 (global-set-key (kbd "C-c d") 'duplicate-line)
 (global-set-key (kbd "C-c o")  'sort-lines-by-length)
 (global-set-key (kbd "C-c q") 'query-replace-regexp)
@@ -73,7 +76,10 @@
 (global-unset-key (kbd "C-x C-z"))
 (global-set-key "\C-z" 'advertised-undo)
 
-;; DOnt Use CTRL-C style copy pase
+;; custom utility methds from /.emacs.d/snippets
+(global-set-key (kbd "C-c C-u l") 'copy-lunch-poll)
+
+;; Dont use CTRL-C style copy pase
 (cua-mode -1)
 
 

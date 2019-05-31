@@ -36,11 +36,12 @@
     (- (length *locations*) 3)))
 
 (defun create-lunch-poll ()
-  (format "/poll \"lunch\" %S"
-          (combine-and-quote-strings (pick-3-locations) ", ")))
+  "format choices into the slack poll, prints choices to buffer"
+  (let ((choices-string (combine-and-quote-strings (pick-3-locations) ", ")))
+    (message (format "chose: %S" choices-string))
+    (format "/poll \"lunch\" %S" choices-string)))
 
 (defun copy-lunch-poll ()
   "copy a lunch poll to the paste ring"
+  (interactive)
   (kill-new (create-lunch-poll)))
-
-(copy-lunch-poll)
