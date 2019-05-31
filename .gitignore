@@ -6,6 +6,8 @@ Music/
 Pictures/
 snap/
 temp
+node_modules/
+Yaru-Colors/
 
 !README.md
 !.gitignore
@@ -33,7 +35,8 @@ temp
 !.config/rofi/**/*
 !.config/base16-gnome-terminal/
 !.config/base16-gnome-terminal/**/*
-
+!.config/dunst/
+!.config/dunst/**/*
 # ignore emacs files
 .#*w
 *~
