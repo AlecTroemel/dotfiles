@@ -25,11 +25,23 @@
 
 
 ;; Set default font
-(set-face-attribute 'default nil
-                    :family "FuraCode Nerd Font" ;;"mononoki Nerd Font Mono"
-                    :height 70
+(defun monitor-font-size ()
+    (interactive)
+    (set-face-attribute 'default nil
+                        :family "FuraCode Nerd Font"
+                        :height 70 ;; monitor
+                        :weight 'normal
+                        :width 'normal))
+
+(defun laptop-font-size ()
+  (interactive)
+  (set-face-attribute 'default nil
+                    :family "FuraCode Nerd Font"
+                    :height 110 ;; laptop screen
                     :weight 'normal
-                    :width 'normal)
+                    :width 'normal))
+
+(monitor-font-size)
 
 ;; no startup screen
 (setq inhibit-startup-screen t)
@@ -77,7 +89,10 @@
 (global-set-key "\C-z" 'advertised-undo)
 
 ;; custom utility methds from /.emacs.d/snippets
+(load "~/.emacs.d/snippets/lunch.el")
 (global-set-key (kbd "C-c C-u l") 'copy-lunch-poll)
+(global-set-key (kbd "C-c C-u b") 'laptop-font-size)
+(global-set-key (kbd "C-c C-u s") 'monitor-font-size)
 
 ;; Dont use CTRL-C style copy pase
 (cua-mode -1)
@@ -350,13 +365,21 @@
   (global-set-key (kbd "C-.") 'er/expand-region)
   (global-set-key (kbd "C-,") 'er/contract-region))
 
+(use-package add-node-modules-path
+  :ensure t)
+
 (use-package prettier-js
   :ensure t
   :interpreter ("prettier-js" . prettier-js-mode)
-  :after (js2-mode)
+  :after (js2-mode add-node-modules-path)
   :hook ((js2-mode . prettier-js-mode)
          (web-mode . prettier-js-mode))
-  )
+  :config
+  (eval-after-load
+      'web-mode
+    '(add-hook 'web-mode-hook #'add-node-modules-path))
+  (eval-after-load 'js2-mode
+    '(add-hook 'js2-mode-hook #'add-node-modules-path)))
 
 (use-package exec-path-from-shell
   :ensure t
@@ -367,8 +390,8 @@
   :ensure t
   :interpreter (("smartparens-config" . smartparens-mode)
                 ("smartparens-config" . smartparens-strict-mode))
-  :hook ((emacs-lisp-mode . smartparens-mode)
-         (lisp-mode . smartparens-mode)
+  :hook ((emacs-lisp-mode . smartparens-strict-mode)
+         (lisp-mode . smartparens-strict-mode)
          (eval-expression-minibuffer-setup . smartparens-mode)
          (js2-mode . smartparens-mode)
          (rust-mode . smartparens-mode))
@@ -452,20 +475,18 @@
  '(highlight-indentation-current-column-face "#343d46" t)
  '(js2-global-externs
    (quote
-    ("this" "require" "module" "exports" "process" "__dirname" "setTimeout" "setInterval")) t)
- '(js2-highlight-level 3 t)
- '(js2-ignored-warnings (quote ("msg.extra.trailing.comma")) t)
- '(js2-include-jslint-declaration-externs nil t)
- '(js2-missing-semi-one-line-override nil t)
- '(js2-strict-missing-semi-warning nil t)
+    ("this" "require" "module" "exports" "process" "__dirname" "setTimeout" "setInterval")))
+ '(js2-highlight-level 3)
+ '(js2-ignored-warnings (quote ("msg.extra.trailing.comma")))
+ '(js2-include-jslint-declaration-externs nil)
+ '(js2-missing-semi-one-line-override nil)
+ '(js2-strict-missing-semi-warning nil)
  '(js2-use-font-lock-faces t t)
  '(org-agenda-files (quote ("~/Documents/Mirus/TODO.org")))
  '(package-selected-packages
    (quote
-    (markdown-mode cheat-sh forge ghub memoize web-mode zone-matrix zone-tunnels zone-select fireplace nodejs-repl projectile-mode js-comint django-commands emacs-django-commands pony-mode python-django django-mode blacken which-key which-key-mode nginx-mode kubernetes magit-todo-mode magit-todo expand-region auto-package-update racer tide whitespace-mode yasnippet-snippets cargo-minor-mode cargo terraform-mode go-mode smartparens-config restclient-mode yaml-mode window-numbering window-number vue-mode use-package toml-mode telephone-line spotify smartparens slime slack restart-emacs project-explorer prettier-js pkg-info parinfer paredit npm-mode neotree markdown-preview-mode magit less-css-mode haxe-mode haxe-imports focus flymd flymake-jshint flymake exec-path-from-shell elpy drag-stuff dockerfile-mode dirtree diminish company-web company-tern company-restclient coffee-mode buffer-move base16-theme auto-dim-other-buffers auto-complete ac-html-csswatcher)))
- '(prettier-js-args
-   (quote
-    ("--single-quote" "true" "--trailing-comma" "es5" "--tab-width" "4" "--print-width" "100")))
+    (add-node-modules-path markdown-mode cheat-sh forge ghub memoize web-mode zone-matrix zone-tunnels zone-select fireplace nodejs-repl projectile-mode js-comint django-commands emacs-django-commands pony-mode python-django django-mode blacken which-key which-key-mode nginx-mode kubernetes magit-todo-mode magit-todo expand-region auto-package-update racer tide whitespace-mode yasnippet-snippets cargo-minor-mode cargo terraform-mode go-mode smartparens-config restclient-mode yaml-mode window-numbering window-number vue-mode use-package toml-mode telephone-line spotify smartparens slime slack restart-emacs project-explorer prettier-js pkg-info parinfer paredit npm-mode neotree markdown-preview-mode magit less-css-mode haxe-mode haxe-imports focus flymd flymake-jshint flymake exec-path-from-shell elpy drag-stuff dockerfile-mode dirtree diminish company-web company-tern company-restclient coffee-mode buffer-move base16-theme auto-dim-other-buffers auto-complete ac-html-csswatcher)))
+ '(prettier-js-args nil)
  '(python-shell-exec-path nil)
  '(python-shell-interpreter "python3")
  '(python-shell-interpreter-interactive-arg "manage.py shell")
@@ -475,10 +496,10 @@
      (python-shell-interpreter . "python3"))))
  '(setq
    [## 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0] t)
- '(web-mode-block-padding 0 t)
- '(web-mode-comment-style 0 t)
- '(web-mode-script-padding 0 t)
- '(web-mode-style-padding 0 t))
+ '(web-mode-block-padding 0)
+ '(web-mode-comment-style 0)
+ '(web-mode-script-padding 0)
+ '(web-mode-style-padding 0))
 
 ;;; .emacs ends here
 (provide '.emacs)
