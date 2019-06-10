@@ -170,6 +170,14 @@
 ;;   :ensure t
 ;;   :config (load "~/.emacs.d/custom/pico8.el"))
 
+(use-package org-journal
+  :ensure t
+  :pin melpa
+  :config
+  (customize-set-variable 'org-journal-dir "~/Documents/personal/journal/")
+  (customize-set-variable 'org-journal-file-type 'weekly)
+  (customize-set-variable 'org-journal-file-format "%Y-%m-%d"))
+
 (use-package fireplace
   :ensure t)
 
@@ -468,7 +476,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(blacken-line-length 100 t)
+ '(blacken-line-length 100)
  '(django-commands-python-executable "python3")
  '(django-commands-shell-args (quote ("-i" "ipython")))
  '(expand-region-preferred-python-mode (quote fgallina-python))
@@ -485,7 +493,7 @@
  '(org-agenda-files (quote ("~/Documents/Mirus/TODO.org")))
  '(package-selected-packages
    (quote
-    (add-node-modules-path markdown-mode cheat-sh forge ghub memoize web-mode zone-matrix zone-tunnels zone-select fireplace nodejs-repl projectile-mode js-comint django-commands emacs-django-commands pony-mode python-django django-mode blacken which-key which-key-mode nginx-mode kubernetes magit-todo-mode magit-todo expand-region auto-package-update racer tide whitespace-mode yasnippet-snippets cargo-minor-mode cargo terraform-mode go-mode smartparens-config restclient-mode yaml-mode window-numbering window-number vue-mode use-package toml-mode telephone-line spotify smartparens slime slack restart-emacs project-explorer prettier-js pkg-info parinfer paredit npm-mode neotree markdown-preview-mode magit less-css-mode haxe-mode haxe-imports focus flymd flymake-jshint flymake exec-path-from-shell elpy drag-stuff dockerfile-mode dirtree diminish company-web company-tern company-restclient coffee-mode buffer-move base16-theme auto-dim-other-buffers auto-complete ac-html-csswatcher)))
+    (org-journal add-node-modules-path markdown-mode cheat-sh forge ghub memoize web-mode zone-matrix zone-tunnels zone-select fireplace nodejs-repl projectile-mode js-comint django-commands emacs-django-commands pony-mode python-django django-mode blacken which-key which-key-mode nginx-mode kubernetes magit-todo-mode magit-todo expand-region auto-package-update racer tide whitespace-mode yasnippet-snippets cargo-minor-mode cargo terraform-mode go-mode smartparens-config restclient-mode yaml-mode window-numbering window-number vue-mode use-package toml-mode telephone-line spotify smartparens slime slack restart-emacs project-explorer prettier-js pkg-info parinfer paredit npm-mode neotree markdown-preview-mode magit less-css-mode haxe-mode haxe-imports focus flymd flymake-jshint flymake exec-path-from-shell elpy drag-stuff dockerfile-mode dirtree diminish company-web company-tern company-restclient coffee-mode buffer-move base16-theme auto-dim-other-buffers auto-complete ac-html-csswatcher)))
  '(prettier-js-args nil)
  '(python-shell-exec-path nil)
  '(python-shell-interpreter "python3")

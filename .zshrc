@@ -18,7 +18,7 @@ precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
 zstyle ':vcs_info:git:*' formats '%b'
 
-PS1='%F{blue}(%~%f%F{blue}) %F{yellow}( ${vcs_info_msg_0_}) %F{green}(ﴱ $ZSH_KUBECTL_PROMPT)'$'\n''%(?.%F{magenta}.%F{red})> %f'
+PS1='%F{blue}(%~%f%F{blue}) %F{yellow}( ${vcs_info_msg_0_}) %F{green}(ﴱ $ZSH_KUBECTL_NAMESPACE)'$'\n''%(?.%F{magenta}.%F{red})> %f'
 
 #### My aliases ####
 
