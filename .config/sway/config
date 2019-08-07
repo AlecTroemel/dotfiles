@@ -144,6 +144,7 @@ output eDP-1 scale 1
 output HDMI-A-2 scale 1
 output HDMI-A-2 pos 0 0 res 3440x1440
 output eDP-1 pos 900 1440 res 2560x1440
+# output DP-2 pos 0 1440 res 1920x1080
 # output eDP-1 bg ~/Pictures/wallpapers/gradient_dark_red.jpg stretch
 # output HDMI-A-2 bg ~/Pictures/wallpapers/gradient_purple.jpg stretch
 
@@ -176,6 +177,9 @@ exec swayidle \
     # timeout 600 'exec swaylock -n' \
     after-resume 'swaymsg "output * dpms on"' \
     before-sleep 'exec swaylock -n'
+
+exec_always redshift
+exec_always mako
 
 # class                 border  bground text    indicator child_border
 client.focused          #2B303B #2B303B #DFE1E8 #8FA1B3   #8FA1B3

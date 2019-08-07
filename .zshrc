@@ -7,6 +7,7 @@ antigen bundle command-not-found
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle superbrothers/zsh-kubectl-prompt
 antigen bundle Tarrasch/zsh-bd
+antigen bundle zsh-users/zsh-syntax-highlighting
 antigen apply
 
 autoload -U colors; colors
@@ -46,6 +47,10 @@ alias kcl='kubectl logs -f'
 alias k='kapn'
 alias h='helm'
 alias g='git'
+
+# microk8s aliases
+alias mkc='microk8s.kubectl'
+alias mhelm='helm --kubeconfig ~/snap/helm/common/kube/config'
 
 # python virtual environment
 alias pve="source .pyvenv/bin/activate"
