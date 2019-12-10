@@ -36,6 +36,8 @@ alias emacs='/usr/local/bin/emacs'
 
 # lets not type kubectl, or other common commands every time!
 alias kc='kubectl'
+alias kcg='kubectl get'
+alias kcd='kubectl describe'
 alias kcgp='kubectl get pod'
 alias kcdp='kubectl describe pod'
 alias kcop='kubectl get pod -o yaml'
@@ -63,13 +65,16 @@ alias blog-new='jekyll-post'
 # move to common directories
 alias dms='cd ~/Documents/mirus/statefarm/'
 alias dmd='cd ~/Documents/mirus/desjardin/'
+alias dmm='cd ~/Documents/mirus/microservices/'
+alias dmde='cd ~/Documents/mirus/dev/'
+alias whomstami='whoami'
 
 # add user base to python path
-export PYTHONPATH=$(python -c "import site, os; print(os.path.join(site.USER_BASE, 'lib', 'python2.7', 'site-packages'))"):$PYTHONPATH
+# export PYTHONPATH=$PYTHONPATH:$(python -c "import site, os; print(os.path.join(site.USER_BASE, 'lib', 'python2.7', 'site-packages'))")
 
 #### Other config ####
 export EDITOR=/usr/bin/emacs
-export PATH=~/Documents/pico-8/:~/.cargo/bin:~/.local/bin:/snap/bin/:~/.nvm/:~/Downloads/google-cloud-sdk/bin:~/docker_slim:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/etc/paths.d/postgresapp:/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
+export PATH=~/Documents/pico-8/:/var/lib/flatpak/exports/bin:~/.cargo/bin:~/.local/bin:/snap/bin/:~/.nvm/:~/Downloads/google-cloud-sdk/bin:~/docker_slim:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/etc/paths.d/postgresapp:/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
 
 # export TERM=xterm-16color
 # source $HOME/.cargo/env"rofi" /snap/bin
@@ -79,3 +84,7 @@ export PATH=~/Documents/pico-8/:~/.cargo/bin:~/.local/bin:/snap/bin/:~/.nvm/:~/D
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# HLA stuff
+export hlalib=~/Documents/personal/art_of_assembly/usr/hla/hlalib
+export hlainc=~/Documents/personal/art_of_assembly/usr/hla/include

@@ -22,7 +22,6 @@ Yaru-Colors/
 !.zshrc
 !.Xdefaults
 
-
 !.config/
 .config/**/*
 !.config/sway/
@@ -37,6 +36,15 @@ Yaru-Colors/
 !.config/base16-gnome-terminal/**/*
 !.config/dunst/
 !.config/dunst/**/*
+!.config/gtk-2.0/
+!.config/gtk-2.0/**/*
+!.config/gtk-3.0/
+!.config/gtk-3.0/**/*
+!.config/gtk-4.0/
+!.config/gtk-4.0/**/*
+
+!backup.sh
+
 # ignore emacs files
 .#*w
 *~

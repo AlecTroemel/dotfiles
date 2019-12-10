@@ -9,20 +9,15 @@ floating_modifier $mod
 
 bindsym $mod+space exec GDK_BACKEND=x11 rofi -show combi -run-shell-command '{terminal} -e \\"{cmd}; read -n 1 -s"'
 
+bindsym $mod+p exec GDK_BACKEND=x11 rofi -show drun -run-shell-command '{terminal} -e \\"{cmd}; read -n 1 -s"'
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+t exec gnome-terminal
 
 # start emacs
-bindsym $mod+Backslash exec emacs
+bindsym $mod+e exec emacs
 
 # kill focused window
 bindsym $mod+q kill
-
-# change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -31,7 +26,8 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 bindsym $mod+x move workspace to output eDP-1
-bindsym $mod+c move workspace to output HDMI-A-2
+bindsym $mod+c move workspace to output DP-6
+
 
 # move focused window
 bindsym $mod+Shift+j move left
@@ -57,7 +53,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+y layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -141,12 +137,11 @@ gaps outer 0
 gaps inner 15
 
 output eDP-1 scale 1
-output HDMI-A-2 scale 1
-output HDMI-A-2 pos 0 0 res 3440x1440
-output eDP-1 pos 900 1440 res 2560x1440
-# output DP-2 pos 0 1440 res 1920x1080
-# output eDP-1 bg ~/Pictures/wallpapers/gradient_dark_red.jpg stretch
-# output HDMI-A-2 bg ~/Pictures/wallpapers/gradient_purple.jpg stretch
+output DP-4 scale 1
+output DP-4 pos 0 0 res 3440x1440
+output DP-5 pos 0 0 res 3440x1440
+output DP-6 pos 0 0 res 3440x1440
+output eDP-1 pos 520 1440 res 2560x1440
 
 input 1:1:AT_Translated_Set_2_keyboard {
       xkb_options ctrl:swapcaps

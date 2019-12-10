@@ -10,8 +10,8 @@ export BORG_REPO=/media/alec/Backup/borg
 # borg PS is in bitwarden
 # bitwarden is in "pass"
 # pass PS is in my brain
-export BW_SESSION='bw unlock $(pass bitwarden) --raw'
-export BORG_PASSCOMMAND='bw get password "Borg Backup" --session $BW_SESSION'
+# export BW_SESSION=$(bw unlock $(pass bitwarden) --raw)
+# export BORG_PASSPHRASE=$(bw get password "Borg Backup" --session $BW_SESSION)
 
 # some helpers and error handling:
 info() { printf "\n%s %s\n\n" "$( date )" "$*" >&2; }
@@ -21,23 +21,39 @@ info "Starting backup"
 
 # Backup the most important directories into an archive named after
 # the machine this script is currently running on:
-borg create                         \
-    --verbose                       \
-    --filter AME                    \
-    --list                          \
-    --stats                         \
-    --show-rc                       \
-    --compression lz4               \
-    --exclude-caches                \
-    --exclude '/home/*/.cache/*'    \
-    --exclude '/var/cache/*'        \
-    --exclude '/var/tmp/*'          \
-                                    \
-    ::'{hostname}-{now}'            \
-    /etc                            \
-    /home                           \
-    /root                           \
-    /var                            \
+borg create                                \
+    --verbose                              \
+    --filter AME                           \
+    --list                                 \
+    --stats                                \
+    --show-rc                              \
+    --compression lz4                      \
+    --exclude-caches                       \
+    --exclude '/home/*/.cache/*'           \
+    --exclude '/var/cache/*'               \
+    --exclude '/var/tmp/*'                 \
+    --exclude '/var/lib/docker/overlay2/*' \
+    --exclude '/home/*/Trash/*'            \
+    --exclude '/home/*/fonts/*'            \
+    --exclude '/home/*/.wine/*'            \
+    --exclude '/home/*/.minecraft/*'       \
+    --exclude '/home/*/.local/share/*'     \
+    --exclude '/home/*/.local/lib/*'       \
+    --exclude '/home/*/*/node_modules/*'   \
+    --exclude '/home/*/*/target/*'         \
+    --exclude '/home/*/*/.pyvenv/*'        \
+    --exclude '/home/*/.thunderbird/*'     \
+    --exclude '/home/*/.emacs.d/elpa/*'    \
+    --exclude '/home/*/.thunderbird/*'     \
+    --exclude '/home/*/.npm/_cacache/*'    \
+    --exclude '/home/*/build/*'            \
+    
+                                           \
+    ::'{hostname}-{now}'                   \
+    /etc                                   \
+    /home                                  \
+    /root                                  \
+    /var                                   \
 
 backup_exit=$?
 
