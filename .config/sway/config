@@ -9,7 +9,7 @@ floating_modifier $mod
 
 bindsym $mod+space exec GDK_BACKEND=x11 rofi -show combi -run-shell-command '{terminal} -e \\"{cmd}; read -n 1 -s"'
 
-bindsym $mod+p exec GDK_BACKEND=x11 rofi -show drun -run-shell-command '{terminal} -e \\"{cmd}; read -n 1 -s"'
+bindsym $mod+p exec rofi -show drun -run-shell-command '{terminal} -e \\"{cmd}; read -n 1 -s"'
 # start a terminal
 bindsym $mod+t exec gnome-terminal
 
