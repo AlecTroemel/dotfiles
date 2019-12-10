@@ -166,8 +166,10 @@ bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN
 bindsym print exec grim -g "$(slurp)" - | wl-copy
 bindsym XF86Bluetooth exec blueman-manager
 
+exec_always ./.config/sway/fader.py
+
 # Idle configuration
-exec swayidle \
+exec_always swayidle \
     # timeout 300 'swaymsg "output * dpms off"' \
     # timeout 600 'exec swaylock -n' \
     after-resume 'swaymsg "output * dpms on"' \
@@ -175,6 +177,8 @@ exec swayidle \
 
 exec_always redshift
 exec_always mako
+
+
 
 # class                 border  bground text    indicator child_border
 client.focused          #2B303B #2B303B #DFE1E8 #8FA1B3   #8FA1B3
