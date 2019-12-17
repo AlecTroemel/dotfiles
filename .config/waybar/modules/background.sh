@@ -1,10 +1,10 @@
 #!/bin/bash
 
 time=$(date +"%H")
-if [[ "$time" -gt 18 ]]; then
+if [[ "$time" -gt 16 ]]; then
     result=$(swaymsg 'output "*" background ~/Pictures/wallpapers/gradient_dark_red.jpg stretch')
     text="night"
-elif [[ "$time" -gt 14 ]]; then
+elif [[ "$time" -gt 13 ]]; then
     result=$(swaymsg 'output "*" background ~/Pictures/wallpapers/gradient_space.jpg stretch')
     text="evening"
 elif [[ "$time" -gt 11 ]]; then

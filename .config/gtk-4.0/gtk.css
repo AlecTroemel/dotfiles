@@ -15,3 +15,15 @@ window.ssd headerbar.titlebar button.titlebutton {
   min-height: 0;
   padding: 0;
 }
+
+/* remove window title from Client-Side Decorations */
+.solid-csd headerbar .title {
+    font-size: 0;
+}
+
+/* hide extra window decorations/double border */
+window decoration {
+    margin: 0;
+    border: none;
+    padding: 0;
+}

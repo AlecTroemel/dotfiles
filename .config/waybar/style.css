@@ -19,7 +19,7 @@ window#waybar.solo {
 }
 
 #workspaces {
-    margin: 0 5px;
+    margin: 0px 6px 6px 10px;
 }
 
 #workspaces button {
@@ -31,24 +31,47 @@ window#waybar.solo {
     color: #eff1f5;
 }
 
+#workspaces button:hover {
+    color: white;
+    background-color: RGBA(239, 241, 245, 0.3);
+}
+
 #workspaces button.focused {
-    background-color: #dfe1e8;
-    color: #2b303b;
+    color: white;
+    background-color: RGBA(239, 241, 245, 0.3);
 }
 
 #workspaces button.urgent {
     color: #bf616a;
 }
 
-#mode, #battery, #cpu, #memory, #network, #pulseaudio, #idle_inhibitor, #backlight, #custom-storage, #custom-spotify, #custom-weather, #custom-mail, #custom-background {
-    border-top: 1px solid #dfe1e8;
-    margin: 0px 6px 0px 2px;
+#mode {
+    color: white;
+    background-color: RGBA(239, 241, 245, 0.3);
+    margin: 0px 6px 6px 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#window {
+    color: white;
+    margin: 0px 6px 6px 0px;
+}
+
+#battery, #cpu, #memory, #network, #pulseaudio, #idle_inhibitor, #backlight, #custom-storage, #custom-spotify, #custom-weather, #custom-mail, #custom-background {
+    color: white;
+    background-color: RGBA(239, 241, 245, 0.2);
+    margin: 0px 6px 6px 2px;
+    padding: 6px 10px;
     min-width: 25px;
 }
 
 #clock {
-    border-top: 1px solid #dfe1e8;
-    margin: 0px 16px 0px 2px;
+    color: white;
+    /* background-color: RGBA(43, 48, 59, 0.8); dark color version */
+    background-color: RGBA(239, 241, 245, 0.2);
+    margin: 0px 16px 6px 2px;
+    padding: 6px 10px;
     min-width: 140px;
 }
 

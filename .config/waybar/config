@@ -1,6 +1,6 @@
 {
     "position": "bottom",
-    "height": 35,
+    "height": 33,
     "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
     "modules-center": [],
     "modules-right": [ "custom/spotify", "pulseaudio", "custom/weather", "backlight", "network", "battery", "custom/background", "clock"],
