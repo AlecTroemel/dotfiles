@@ -33,12 +33,12 @@ window#waybar.solo {
 
 #workspaces button:hover {
     color: white;
-    background-color: RGBA(239, 241, 245, 0.3);
+    background-color: RGBA(239, 241, 245, 0.2);
 }
 
 #workspaces button.focused {
     color: white;
-    background-color: RGBA(239, 241, 245, 0.3);
+    background-color: RGBA(239, 241, 245, 0.2);
 }
 
 #workspaces button.urgent {
@@ -47,7 +47,7 @@ window#waybar.solo {
 
 #mode {
     color: white;
-    background-color: RGBA(239, 241, 245, 0.3);
+    background-color: RGBA(239, 241, 245, 0.2);
     margin: 0px 6px 6px 0px;
     padding-left: 10px;
     padding-right: 10px;
