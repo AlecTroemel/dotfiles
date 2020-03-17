@@ -133,8 +133,8 @@ for_window [class="^.*"] border pixel 0
 default_floating_border pixel 0
 default_border pixel 0
 
-gaps outer 0
-gaps inner 10
+gaps outer 1
+gaps inner 2
 
 output eDP-1 scale 1
 output DP-4 scale 1
@@ -180,7 +180,7 @@ exec_always mako
 
 
 # class                 border  bground text    indicator child_border
-client.focused          #DFE1E8 #2B303B #DFE1E8 #8FA1B3   #8FA1B3
+client.focused          #2B303B #2B303B #DFE1E8 #8FA1B3   #8FA1B3
 client.focused_inactive #65737E #65737E #DFE1E8 #65737E   #65737E
 client.unfocused        #4F5B66 #4F5B66 #DFE1E8 #4F5B66   #4F5B66
 client.urgent           #BF616A #BF616A #DFE1E8 #BF616A   #BF616A
