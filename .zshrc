@@ -7,7 +7,6 @@ antigen bundle command-not-found
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle superbrothers/zsh-kubectl-prompt
 antigen bundle Tarrasch/zsh-bd
-antigen bundle zsh-users/zsh-syntax-highlighting
 antigen apply
 
 autoload -U colors; colors
@@ -19,9 +18,12 @@ precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
 zstyle ':vcs_info:git:*' formats '%b'
 
-PS1='%F{blue}(%~%f%F{blue}) %F{yellow}( ${vcs_info_msg_0_}) %F{green}(ﴱ $ZSH_KUBECTL_NAMESPACE)'$'\n''%(?.%F{magenta}.%F{red})> %f'
+PS1='%F{blue}(%~%f%F{blue}) %F{yellow}( ${vcs_info_msg_0_}) %F{green}(ﴱ $ZSH_KUBECTL_PROMPT)'$'\n''%(?.%F{magenta}.%F{red})> %f'
 
 #### My aliases ####
+
+# colorized cat with this python package (installed with pipx)
+alias ccat="pygmentize"
 
 # run meteor with settings file
 alias mr="meteor run --settings settings.json"
@@ -38,13 +40,17 @@ alias emacs='/usr/local/bin/emacs'
 alias kc='kubectl'
 alias kcg='kubectl get'
 alias kcd='kubectl describe'
+alias kcdel='kubectl delete'
+alias kced='kubectl edit'
+alias kcex='kubectl edit'
 alias kcgp='kubectl get pod'
 alias kcdp='kubectl describe pod'
 alias kcop='kubectl get pod -o yaml'
 alias kcgs='kubectl get service'
 alias kcgi='kubectl get ingress'
-alias kcgc='kubectl get certs'
-alias kcdc='kubectl describe certs'
+alias kcgce='kubectl get certs'
+alias kcdce='kubectl describe certs'
+alias kcgcr='kubectl get cronjobs'
 alias kcl='kubectl logs -f'
 alias k='kapn'
 alias h='helm'
@@ -74,7 +80,7 @@ alias whomstami='whoami'
 
 #### Other config ####
 export EDITOR=/usr/bin/emacs
-export PATH=~/Documents/pico-8/:/var/lib/flatpak/exports/bin:~/.cargo/bin:~/.local/bin:/snap/bin/:~/.nvm/:~/Downloads/google-cloud-sdk/bin:~/docker_slim:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/etc/paths.d/postgresapp:/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
+
 
 # export TERM=xterm-16color
 # source $HOME/.cargo/env"rofi" /snap/bin
@@ -88,3 +94,9 @@ export NVM_DIR="$HOME/.nvm"
 # HLA stuff
 export hlalib=~/Documents/personal/art_of_assembly/usr/hla/hlalib
 export hlainc=~/Documents/personal/art_of_assembly/usr/hla/include
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH=$PYENV_ROOT/bin:~/Documents/pico-8/:/var/lib/flatpak/exports/bin:~/.cargo/bin:~/.local/bin:/snap/bin:~/.nvm/:~/Downloads/google-cloud-sdk/bin:~/docker_slim:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/etc/paths.d/postgresapp:/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
+
+eval "$(pyenv init -)"
