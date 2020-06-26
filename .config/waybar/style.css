@@ -1,8 +1,8 @@
 *  {
     border:none;
-    border-radius: 0;
+    border-radius: 2;
     font-family: "FuraCode Nerd Font";
-    font-size: 18px;
+    font-size: 17px;
     box-shadow: none;
     text-shadow: none;
     transition-duration: 0s;
@@ -19,7 +19,7 @@ window#waybar.solo {
 }
 
 #workspaces {
-    margin: 0px 6px 6px 10px;
+    margin: 0px 6px 3px 10px;
 }
 
 #workspaces button {
@@ -48,30 +48,33 @@ window#waybar.solo {
 #mode {
     color: white;
     background-color: RGBA(239, 241, 245, 0.2);
-    margin: 0px 6px 6px 0px;
+    /* background-color: RGBA(43, 48, 59, 0.7); /\* dark *\/ */
+    margin: 0px 6px 3px 0px;
     padding-left: 10px;
     padding-right: 10px;
 }
 
 #window {
     color: white;
-    margin: 0px 6px 6px 0px;
+    margin: 0px 6px 3px 0px;
 }
 
 #battery, #cpu, #memory, #network, #pulseaudio, #idle_inhibitor, #backlight, #custom-storage, #custom-spotify, #custom-weather, #custom-mail, #custom-background {
     color: white;
-    background-color: RGBA(239, 241, 245, 0.2);
-    margin: 0px 6px 6px 2px;
-    padding: 6px 10px;
+    /* background-color: RGBA(239, 241, 245, 0.2); */ /* light */
+    background-color: RGBA(43, 48, 59, 0.7); /* dark */
+    margin: 0px 6px 3px 0px;
+    padding: 0px 10px;
     min-width: 25px;
 }
 
 #clock {
     color: white;
-    /* background-color: RGBA(43, 48, 59, 0.8); dark color version */
-    background-color: RGBA(239, 241, 245, 0.2);
-    margin: 0px 16px 6px 2px;
-    padding: 6px 10px;
+
+    background-color: RGBA(43, 48, 59, 0.7); /* dark */
+    /* background-color: RGBA(239, 241, 245, 0.2); */ /* light */
+    margin: 0px 3px 3px 0px;
+    padding: 0px 10px;
     min-width: 140px;
 }
 

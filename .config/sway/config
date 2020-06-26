@@ -181,8 +181,8 @@ exec_always mako
 
 # class                 border  bground text    indicator child_border
 client.focused          #2B303B #2B303B #DFE1E8 #8FA1B3   #8FA1B3
-client.focused_inactive #65737E #65737E #DFE1E8 #65737E   #65737E
-client.unfocused        #4F5B66 #4F5B66 #DFE1E8 #4F5B66   #4F5B66
+client.focused_inactive #2B303B #2B303B #DFE1E8 #65737E   #65737E
+client.unfocused        #0B161E #0B161E #DFE1E8 #4F5B66   #4F5B66
 client.urgent           #BF616A #BF616A #DFE1E8 #BF616A   #BF616A
 client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 client.background       #2b303b

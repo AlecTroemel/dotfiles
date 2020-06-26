@@ -1,3 +1,10 @@
+# setup ssh-agent, taken from
+# https://stackoverflow.com/questions/18880024/start-ssh-agent-on-login#18915067
+SSH_ENV="$HOME/.ssh/environment"
+
+# Setup keychain https://www.funtoo.org/Keychain
+eval `keychain --eval --agents ssh id_rsa`
+
 #### All the zsh plugins and stuff ####
 source ~/antigen.zsh
 antigen use oh-my-zsh
@@ -41,8 +48,8 @@ alias kc='kubectl'
 alias kcg='kubectl get'
 alias kcd='kubectl describe'
 alias kcdel='kubectl delete'
-alias kced='kubectl edit'
-alias kcex='kubectl edit'
+alias kce='kubectl edit'
+alias kcex='kubectl exec -it'
 alias kcgp='kubectl get pod'
 alias kcdp='kubectl describe pod'
 alias kcop='kubectl get pod -o yaml'
@@ -51,6 +58,8 @@ alias kcgi='kubectl get ingress'
 alias kcgce='kubectl get certs'
 alias kcdce='kubectl describe certs'
 alias kcgcr='kubectl get cronjobs'
+alias kcgd='kubectl get deploy'
+alias kcdd='kubectl describe deploy'
 alias kcl='kubectl logs -f'
 alias k='kapn'
 alias h='helm'
@@ -74,6 +83,10 @@ alias dmd='cd ~/Documents/mirus/desjardin/'
 alias dmm='cd ~/Documents/mirus/microservices/'
 alias dmde='cd ~/Documents/mirus/dev/'
 alias whomstami='whoami'
+
+# suffic aliases
+alias -s js=node
+alias -s py=python3
 
 # add user base to python path
 # export PYTHONPATH=$PYTHONPATH:$(python -c "import site, os; print(os.path.join(site.USER_BASE, 'lib', 'python2.7', 'site-packages'))")
@@ -100,3 +113,8 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH=$PYENV_ROOT/bin:~/Documents/pico-8/:/var/lib/flatpak/exports/bin:~/.cargo/bin:~/.local/bin:/snap/bin:~/.nvm/:~/Downloads/google-cloud-sdk/bin:~/docker_slim:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/etc/paths.d/postgresapp:/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
 
 eval "$(pyenv init -)"
+[[ /snap/bin/kubectl ]] && source <(kubectl completion zsh)
+
+# Deno
+export DENO_INSTALL="/home/alec/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
