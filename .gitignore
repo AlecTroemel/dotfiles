@@ -45,6 +45,8 @@ Yaru-Colors/
 
 !backup.sh
 
+!.spacemacs
+
 # ignore emacs files
 .#*w
 *~
